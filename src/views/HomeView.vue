@@ -1,18 +1,63 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center position-fixed">
+    <div class="content text-center">
+      <router-link :to="{name: 'games'}">
+        <button>Ready for Adventure?</button>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+//import GameList from "@/components/game/GameList.vue";
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-};
+});
+
 </script>
+
+<style scoped>
+  .banner-image {
+    background-image: url('../assets/pexels-cottonbro-4842567.jpg');
+    background-size: cover;
+  }
+
+  button {
+  width: 150px;
+  height: 69px;
+  font-size: 23px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  }
+
+  button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: all 0.5s;
+  }
+
+  button:hover::before {
+  width: 100%;
+  }
+
+  button:hover {
+  color: #141414;
+  }
+
+</style>
