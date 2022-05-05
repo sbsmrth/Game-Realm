@@ -18,13 +18,14 @@ export default defineComponent({
     GameListPL,
   },
 
-  beforeMount() {
+  mounted() {
     this.getGames();
   },
 
   methods: {
     async getGames() {
-      const rslt = await fetch(
+      try {
+        const rslt = await fetch(
         "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=popularity",
         {
           method: "GET",
@@ -35,8 +36,13 @@ export default defineComponent({
           },
         }
       );
-      const data = await rslt.json();
-      this.games = data;
+        const data = await rslt.json();
+        this.games = data;
+
+      } catch(error) {
+        console.log(error)
+      }
+      
     },
   },
 })

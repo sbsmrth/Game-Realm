@@ -8,25 +8,19 @@ const routes = [
     component: HomeView,
   },
   {
-    path: '/platform-pc',
-    name: 'platform-pc',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/platform/:pt',
+    name: 'platform',
     component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/PlatformPcView.vue'),
+      import(/* webpackChunkName: "about" */ '@/views/PlatformView.vue'),
   },
   {
-    path: '/platform-browser',
-    name: 'platform-browser',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path:'/games',
+    name: 'games',
     component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/PlatformBrowserView.vue'),
+      import(/* webpackChunkName: "about" */ '@/views/GamesView.vue'),
   },
   {
-    path: '/categories/:tag',
+    path: '/categories/:id',
     name: 'categories',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -53,7 +47,7 @@ const routes = [
       import(/* webpackChunkName: "about" */ '@/views/GamesView.vue'),
   },
   {
-    path: '/our-world',
+    path: '/our-world/',
     name: 'ourworld',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

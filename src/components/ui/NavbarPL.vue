@@ -9,7 +9,7 @@
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item me-2">
               <router-link to="/">
-                <a class="nav-link active" aria-current="page" href="#">home</a>
+                <a class="nav-link active" aria-current="page">home</a>
               </router-link>
           </li>
           <li class="nav-item dropdown me-2">
@@ -17,8 +17,26 @@
               categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item text-center" href="#">shooter</a></li>
-              <li><a class="dropdown-item text-center" href="#">horror</a></li>
+              <li>
+                <router-link :to="{name:'categories', params:{id:'shooter'}}">
+                  <a class="dropdown-item text-center">shooter</a>
+                </router-link>
+              </li>
+              <li>
+                <router-link :to="{name:'categories', params:{id:'mmorpg'}}">
+                  <a class="dropdown-item text-center">mmorpg</a>
+                </router-link>
+              </li> 
+              <li>
+                <router-link :to="{name:'categories', params:{id:'survival'}}">
+                  <a class="dropdown-item text-center">survival</a>
+                </router-link>
+              </li> 
+              <li>
+                <router-link :to="{name:'categories', params:{id:'strategy'}}">
+                  <a class="dropdown-item text-center">strategy</a>
+                </router-link>
+              </li> 
             </ul>
           </li>
           <li class="nav-item dropdown me-2">
@@ -27,12 +45,12 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <router-link :to="{name:'platform-pc'}">
+                <router-link :to="{name:'platform', params:{pt:'pc'}}">
                   <a class="dropdown-item text-center">pc</a>
                 </router-link>
               </li>
               <li>
-                <router-link :to="{name:'platform-browser'}">
+                <router-link :to="{name:'platform', params:{pt:'browser'}}">
                   <a class="dropdown-item text-center">browser</a>
                 </router-link>
               </li>

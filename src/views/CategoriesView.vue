@@ -23,7 +23,7 @@ export default defineComponent({
 
   methods: {
     async getGames() {
-      const rslt = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=mmorpg`,
+      const rslt = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${this.$route.params.id}`,
         {
           method: "GET",
           headers: {
