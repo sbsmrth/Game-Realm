@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import './styles/styles.css'
 import { defineComponent } from 'vue'
 import NavBarPL from '@/components/ui/NavbarPL.vue'
 

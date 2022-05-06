@@ -9,7 +9,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
 
   beforeMount() {
-    this.getGames();
+    this.getGames(this.$route.params.pt);
   },
 
   name: "PlatformView",
@@ -25,9 +25,9 @@ export default defineComponent({
   },
 
   methods: {
-    async getGames() {
+    async getGames(pt) {
       const rslt = await fetch(
-        `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${this.$route.params.pt}`,
+        `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${pt}`,
         {
           method: "GET",
           headers: {
@@ -40,6 +40,12 @@ export default defineComponent({
       const data = await rslt.json();
       this.games = data;
     },
+  },
+
+  watch: {
+    '$route.params.pt': function(pt) {
+      this.getGames(pt)
+    }
   },
 });
 </script>
