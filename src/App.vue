@@ -31,7 +31,7 @@ export default defineComponent({
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
