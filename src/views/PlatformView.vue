@@ -1,10 +1,16 @@
 <template>
-  <GameListPL :games="games"/> 
+  <div v-if="load" class="load-c">
+    <LoadingPL/>
+  </div>
+  <div v-else>
+    <GameListPL :games="games"/> 
+  </div>
 </template>
 
 <script>
-import GameListPL from "@/components/game/GameListPL.vue";
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
+import GameListPL from '@/components/game/GameListPL.vue';
+import LoadingPL from '@/components/LoadingPL.vue'
 
 export default defineComponent({
 
@@ -16,11 +22,13 @@ export default defineComponent({
 
   components: {
     GameListPL,
+    LoadingPL,
   },
 
   data() {
     return {
       games: [],
+      load: true,
     }
   },
 
@@ -39,6 +47,7 @@ export default defineComponent({
       );
       const data = await rslt.json();
       this.games = data;
+      this.load = false;
     },
   },
 

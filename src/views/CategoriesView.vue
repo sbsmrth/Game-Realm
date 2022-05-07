@@ -1,13 +1,19 @@
 <template>
-  <GameListPL :games="games" />
+  <div v-if="load" class="load-c">
+    <LoadingPL/>
+  </div>
+  <div v-else>
+    <GameListPL :games="games" />
+  </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import GameListPL from "@/components/game/GameListPL.vue";
+import { defineComponent } from 'vue';
+import GameListPL from '@/components/game/GameListPL.vue';
+import LoadingPL from '@/components/LoadingPL.vue'
 
 export default defineComponent({
-  name: "CategoriesView",
+  name: 'CategoriesView',
 
   beforeMount() {
     this.getGames(this.$route.params.id);
@@ -15,10 +21,12 @@ export default defineComponent({
 
   components: {
     GameListPL,
+    LoadingPL,
   },
 
   data: () => ({
     games: [],
+    load: true,
   }),
 
   methods: {
@@ -35,11 +43,12 @@ export default defineComponent({
       );
       const data = await rslt.json();
       this.games = data;
+      this.load = false;
     },
   },
 
   watch: {
-    '$route.params.id': function(id) {
+    "$route.params.id": function(id) {
       this.getGames(id)
     }
   },

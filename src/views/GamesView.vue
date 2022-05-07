@@ -1,24 +1,33 @@
 <template>
-  <GameListPL :games="games"/>
+  <div v-if="load" class="load-c">
+    <LoadingPL/>
+  </div>
+  <div v-else>
+    <GameListPL :games="games"/>
+  </div>
+  
 </template>
 
 <script>
 
 import { defineComponent } from 'vue'
 import GameListPL from '@/components/game/GameListPL.vue'
+import LoadingPL from '@/components/LoadingPL.vue'
 
 export default defineComponent({
   name: 'GamesView',
 
   data: () => ({
     games: [],
+    load: true,
   }),
 
   components: {
     GameListPL,
+    LoadingPL,
   },
 
-  mounted() {
+  beforeMount() {
     this.getGames();
   },
 
@@ -38,6 +47,7 @@ export default defineComponent({
       );
         const data = await rslt.json();
         this.games = data;
+        this.load = false;
 
       } catch(error) {
         console.log(error)
@@ -47,3 +57,11 @@ export default defineComponent({
   },
 })
 </script>
+
+<style>
+  .load-c {
+    position: absolute;
+    top: 47%;
+    left: 47%;
+  }
+</style>
