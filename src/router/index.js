@@ -11,49 +11,31 @@ const routes = [
     path: '/platform/:pt',
     name: 'platform',
     component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/PlatformView.vue'),
-  },
-  {
-    path:'/games',
-    name: 'games',
-    component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/GamesView.vue'),
+      import(/* webpackChunkName: "platform" */ '@/views/PlatformView.vue'),
   },
   {
     path: '/categories/:id',
     name: 'categories',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/CategoriesView.vue'),
+      import(/* webpackChunkName: "categories" */ '@/views/CategoriesView.vue'),
   },
   {
     path: '/details/:id',
     name: 'details',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '@/views/GameDetailsView.vue'),
   },
   {
     path: '/games',
     name: 'games',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/GamesView.vue'),
+      import(/* webpackChunkName: "games" */ '@/views/GamesView.vue'),
   },
   {
     path: '/our-world/',
     name: 'ourworld',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/OurWorldView.vue'),
+      import(/* webpackChunkName: "ourworld" */ '@/views/OurWorldView.vue'),
   },
  
 ];
