@@ -2,9 +2,7 @@
   <div v-if="load" class="load-c">
     <LoadingPL/>
   </div>
-  <div v-else>
-    <GameListPL :games="games"/> 
-  </div>
+  <GameListPL v-else :games="games"/> 
 </template>
 
 <script>
@@ -34,20 +32,22 @@ export default defineComponent({
 
   methods: {
     async getGames(pt) {
-      const rslt = await fetch(
-        `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${pt}`,
-        {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-            "X-RapidAPI-Key":
-              "1e2fe7a354mshd9063d3412e3377p107dfcjsn3aaec969da87",
-          },
-        }
-      );
-      const data = await rslt.json();
-      this.games = data;
-      this.load = false;
+      if(pt != null) {
+        const rslt = await fetch(
+          `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${pt}`,
+          {
+            method: "GET",
+            headers: {
+              "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+              "X-RapidAPI-Key":
+                "1e2fe7a354mshd9063d3412e3377p107dfcjsn3aaec969da87",
+            },
+          }
+        );
+        const data = await rslt.json();
+        this.games = data;
+        this.load = false;
+      }
     },
   },
 

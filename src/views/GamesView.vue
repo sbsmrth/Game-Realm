@@ -2,10 +2,7 @@
   <div v-if="load" class="load-c">
     <LoadingPL/>
   </div>
-  <div v-else>
-    <GameListPL :games="games"/>
-  </div>
-  
+  <GameListPL v-else :games="games"/>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <CarouselPL :images="game.screenshots"/>
+  <CarouselPL v-if="game.screenshots != null" :images="game.screenshots"/>
   <div class="container">
     <div class="row align-items-center">
       <div class="col-12 mt-2">
