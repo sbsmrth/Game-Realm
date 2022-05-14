@@ -7,7 +7,7 @@
       </div>
       <div v-for="e in Object.keys(game)" :key="e">
         <div class="col-12 mb-3" v-if="e != 'title' && e!='minimum_system_requirements'
-        && e != 'screenshots' && e!='id' && e!='thumbnail'">
+        && e != 'screenshots' && e!='id' && e!='thumbnail' && e!='game_url' && e!='freetogame_profile_url'">
           <b>{{e.replace('_', ' ')}}: </b> {{game[e]}}
         </div>
       </div>
@@ -67,4 +67,5 @@ export default {
     -webkit-user-select: none;
     touch-action: manipulation;
   }
+
 </style>

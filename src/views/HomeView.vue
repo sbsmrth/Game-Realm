@@ -20,7 +20,7 @@ export default defineComponent({
 
 <style scoped>
   .banner-image {
-    background-image: url('../assets/pexels-cottonbro-4842567.jpg');
+    background-image: url('../assets/bg-home.jpg');
     background-size: cover;
   }
 

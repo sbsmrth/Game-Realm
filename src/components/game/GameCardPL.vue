@@ -4,8 +4,8 @@
   <div class="card-body">
     <h5 class="card-title fst-italic">{{title}}</h5>
     <p class="card-text">{{description}}</p>
-    <router-link :to="{name: 'details', params: {id}}">
-      <button class="btn-look">Ver</button>
+    <router-link :to="{name: 'details', params: {id, name:textLower}}">
+      <button class="btn-look">See</button>
     </router-link>
   </div>
 </div>
@@ -32,6 +32,12 @@ export default {
       type: Number
     }
   }, 
+
+  computed: {
+    textLower() {
+      return this.title.replace(' ', '-').toLowerCase();
+    }
+  }
 }
 
 </script>

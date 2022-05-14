@@ -55,7 +55,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
   .load-c {
     position: absolute;
     top: 47%;
