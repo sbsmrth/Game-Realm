@@ -22,12 +22,12 @@ export default defineComponent({
   .loading:after {
     content: " ";
     display: block;
-    width: 64px;
-    height: 64px;
+    width: 66px;
+    height: 66px;
     margin: 8px;
     border-radius: 50%;
     border: 6px solid #fcf;
-    border-color: #b5b2b1 transparent #b5b2b1 transparent;
+    border-color: #cbc9c8 transparent #cbc9c8 transparent;
     animation: loading 1.2s linear infinite;
   }
   @keyframes loading {

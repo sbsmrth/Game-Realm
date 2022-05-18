@@ -1,13 +1,9 @@
 <template>
-  
-  <div class="container-fluid d-flex justify-content-center">
-    <video src="@/assets/ourworld/pexels-mart-production-8888792.mp4" muted autoplay loop class="mt-3 mb-4 cont-info">
-    </video>
-  </div>
-
+  <video class="mb-3" src="@/assets/ourworld/pexels-mart-production-8888792.mp4" muted autoplay loop>
+  </video>
   <div class="container-fluid d-flex justify-content-center">
     <div class="cont-info d-flex">
-      <div class="c1 d-flex justify-content-center align-items-center">
+      <div class="c1 d-flex justify-content-center align-items-center me-4">
         <div>
           <h2 class="c1-c">Health</h2>
           <p class="c1-c mt-3">
@@ -33,11 +29,9 @@
       </div>
     </div>
   </div>
-
   <div class="container-fluid d-flex justify-content-center">
     <div class="cont-info d-flex">
-      
-      <div class="c2 mb-3 d-flex justify-content-center align-items-center">
+      <div class="c2 mb-3 d-flex justify-content-center align-items-center me-4">
         <div>
           <h2 class="c2-c">Be whoever you want to be</h2>
           <p class="c2-c mt-3 p-large">
@@ -50,7 +44,6 @@
           </p>
         </div>
       </div>
-      
       <div class="c1 d-flex justify-content-center align-items-center">
         <div>
           <h2 class="c1-c">Connect with yourself</h2>
@@ -63,9 +56,7 @@
           </p>
         </div>
       </div>
-      
     </div>
-
   </div>
 </template>
 
@@ -77,14 +68,18 @@ export default {
 
 <style scoped>
 
+  video {
+    width: 100%;
+  }
+
   .cont-info {
-    width: 97vw;
+    width: 96vw;
   }
 
   .c1 {
     width: 50%;
     height: 400px;
-    background-color: #212529;
+    background-color: #121314;
   }
 
   .c1-c {
@@ -92,13 +87,12 @@ export default {
   }
 
   .c2-c {
-    color: #212529;
+    color: #121314;
   }
 
   .c2 {
     width: 50%;
     height: 400px;
-    background-color: blue;
     background-color: #F8F9FA;
   }
 

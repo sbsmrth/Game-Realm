@@ -14,7 +14,7 @@ export default defineComponent({
   name: 'CategoriesView',
 
   beforeMount() {
-    this.getGames(this.$route.params.id);
+    this.getGames(this.$route.params.ct);
   },
 
   components: {
@@ -28,9 +28,10 @@ export default defineComponent({
   }),
 
   methods: {
-    async getGames(id) {
-      if(id != null) {
-        const rslt = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${id}`,
+    async getGames(ct) {
+      if(ct != null) {
+        const rslt = await fetch(
+          `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${ct}`,
           {
             method: "GET",
             headers: {
@@ -49,9 +50,9 @@ export default defineComponent({
   },
 
   watch: {
-    "$route.params.id": function(id) {
-      this.getGames(id)
-    }
+    '$route.params.ct': function(ct) {
+      this.getGames(ct)
+    },
   },
 });
 </script>

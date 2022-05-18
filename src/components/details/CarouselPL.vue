@@ -17,6 +17,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'CarouselPL',
 
@@ -31,6 +32,6 @@ export default {
 
 <style scoped>
   .crl {
-    height: 80vh;
+    height: 92vh;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center position-fixed">
+  <div class="banner-image w-100 d-flex justify-content-center align-items-center">
     <div class="content text-center">
       <router-link :to="{name: 'games'}">
         <button>Ready for Adventure?</button>
@@ -22,6 +22,7 @@ export default defineComponent({
   .banner-image {
     background-image: url('../assets/bg-home.jpg');
     background-size: cover;
+    height: 92vh;
   }
 
   button {

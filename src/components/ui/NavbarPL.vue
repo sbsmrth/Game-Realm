@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light nav">
     <div class="container-fluid">
       <img src="@/assets/controller.svg" width="24" height="24" alt="">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,56 +9,41 @@
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item me-2">
               <router-link to="/">
-                <a class="nav-link active" aria-current="page">home</a>
+                <a class="nav-link active" aria-current="page">Home</a>
               </router-link>
           </li>
           <li class="nav-item dropdown me-2">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" aria-expanded="false">
-              categories
+              Categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <router-link :to="{name:'categories', params:{id:'shooter'}}">
-                  <a class="dropdown-item text-center">shooter</a>
+              <li v-for="categorie of categories" :key="categorie">
+                <router-link :to="{name:'categories', params:{ct:categorie}}">
+                  <a class="dropdown-item text-center">{{capitalizeCat(categorie)}}</a>
                 </router-link>
               </li>
-              <li>
-                <router-link :to="{name:'categories', params:{id:'mmorpg'}}">
-                  <a class="dropdown-item text-center">mmorpg</a>
-                </router-link>
-              </li> 
-              <li>
-                <router-link :to="{name:'categories', params:{id:'survival'}}">
-                  <a class="dropdown-item text-center">survival</a>
-                </router-link>
-              </li> 
-              <li>
-                <router-link :to="{name:'categories', params:{id:'strategy'}}">
-                  <a class="dropdown-item text-center">strategy</a>
-                </router-link>
-              </li> 
             </ul>
           </li>
           <li class="nav-item dropdown me-2">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" aria-expanded="false">
-              platforms
+              Platforms
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
                 <router-link :to="{name:'platform', params:{pt:'pc'}}">
-                  <a class="dropdown-item text-center">pc</a>
+                  <a class="dropdown-item text-center">Pc</a>
                 </router-link>
               </li>
               <li>
                 <router-link :to="{name:'platform', params:{pt:'browser'}}">
-                  <a class="dropdown-item text-center">browser</a>
+                  <a class="dropdown-item text-center">Browser</a>
                 </router-link>
               </li>
             </ul>
           </li>
           <li class="nav-item me-2">
             <router-link :to="{name:'ourworld'}">
-              <a class="nav-link">our world</a>
+              <a class="nav-link">Our World</a>
             </router-link>
           </li>
         </ul>
@@ -77,10 +62,24 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: "NavBarPL",
+
+  data: () => ({
+    categories: ['shooter', 'mmorpg', 'survival', 'strategy']
+  }),
+
+  methods: {
+    capitalizeCat(txt) {
+      return txt.charAt(0).toUpperCase() + txt.slice(1)
+    }
+  }
 });
 </script>
 
 <style scoped>
+
+  .nav {
+    height: 8vh;
+  }
 
   .navbar .navbar-nav .nav-link:hover{
     color: rgb(28, 27, 26);
@@ -106,46 +105,6 @@ export default defineComponent({
       border-bottom: 0.3em solid;
     }
   }
-
-  .btn-f {
-    width: 140px;
-    height: 45px;
-    font-size: 23px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 700;
-    position: relative;
-    transition: all 0.5s;
-    z-index: 1;
-  }
-
-  .btn-f::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background-color: white;
-    z-index: -1;
-    transition: all 0.5s;
-  }
-
-  .btn-f:hover::before {
-    width: 100%;
-  }
-
-  .btn-f:hover {
-    color: black;
-  }
-
-  .btn-f:active:before {
-    background: #b9b9b9;
-  }
   
   a {
     text-decoration: none;
@@ -157,7 +116,7 @@ export default defineComponent({
     background:#fff;
     padding: 9px 22px 9px 26px;
     border-radius: 30px;
-    border: 2px solid rgb(225, 227, 226);
+    border: 2px solid rgb(242, 243, 242);
   }
 
   form input {
@@ -165,18 +124,16 @@ export default defineComponent({
     height: 15px;
     background: transparent;
     font-weight: bold;
-    padding-left: 24px;
+    padding-left: 27px;
     background-image: url('../../assets/search.png');
     background-size: 14px;
     cursor: pointer;
     background-repeat: no-repeat;
-    width: 0px;
-    transition: all 1s;
+    width: 190px;
+    outline: none; 
   }
   
-  form input:focus {
-    outline: none;
-    width: 300px;
+  form input:hover {
     cursor: text;
   }
 
