@@ -34,4 +34,8 @@ export default {
   .crl {
     height: 92vh;
   }
+
+  .carousel {
+    width: 100%;
+  }
 </style>
