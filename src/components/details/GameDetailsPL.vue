@@ -1,31 +1,32 @@
 <template>
-  <CarouselPL v-if="game.screenshots != null" :images="game.screenshots"/>
-  <div class="load-c container-fluid d-flex justify-content-center align-items-center" v-else>
-    <LoadingPL></LoadingPL>
-  </div>
-  <div class="container-fluid d-flex justify-content-center mt-4"> 
-    <div class="row cont">
-      <div class="col-12 cont-description d-flex justify-content-center 
-      align-items-center rounded-3 mb-4">
-        <div class="cont-info mb-3">
-          <h2 class="mt-3">Description</h2>
-          <p class="mt-3">{{game.description}}</p>
-          <ModalPL v-if="game.minimum_system_requirements" :requeriments="game.minimum_system_requirements"/>
-          <button v-else type="button" class="btn-db" disabled>See requeriments</button>
+  <div v-if="(game.screenshots != null)">
+    <CarouselPL :images="game.screenshots"/>
+    <div class="container-fluid d-flex justify-content-center mt-4" > 
+      <div class="row cont">
+        <div class="col-12 cont-description d-flex justify-content-center 
+        align-items-center rounded-3 mb-4">
+          <div class="cont-info mb-3">
+                <h2 class="mt-3">Description</h2>
+                <p class="mt-3">{{game.description}}</p>
+                <ModalPL v-if="game.minimum_system_requirements && showRequirements(game)" 
+                :requirements="game.minimum_system_requirements"/>
+                <button v-else type="button" class="btn-db" disabled>See requirements</button>
+          </div>
         </div>
-      </div>
-      <div class="col-4 cont-main d-flex justify-content-center 
-      align-items-center mb-2 border border-white border-5"
-      v-for="e of filterRequeriments" :key="e" >
-        <div class="cont-info">
-          <h4 class="mt-3">
-            <b>{{capitalize(e)}}</b>
-          </h4>
-          <p class="mt-2"><i>{{game[e]}}</i></p>
+        <div class="col-4 cont-main d-flex justify-content-center 
+        align-items-center mb-2 border border-white border-5"
+        v-for="e of filterRequirements" :key="e" >
+          <div class="cont-info">
+            <h4 class="mt-3">
+                  <b>{{capitalize(e)}}</b>
+            </h4>
+            <p class="mt-2"><i>{{game[e]}}</i></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <LoadingPL class="load-c" v-else></LoadingPL>
 </template>
 
 <script>
@@ -50,7 +51,7 @@ export default {
   },
 
   computed: {
-    filterRequeriments() {
+    filterRequirements() {
       return Object.keys(this.game).filter(e => 
       e === 'genre' || e ==='platform' || e === 'developer' 
       || e === 'publisher' || e === 'release_date' || e === 'status' )
@@ -61,9 +62,17 @@ export default {
     capitalize(txt) {
       return (txt.charAt(0).toUpperCase() + txt.slice(1)).replace('_', ' ')
     },
-  },
 
-};
+    showRequirements(g) {
+      const keys = Object.keys(g.minimum_system_requirements);
+      let value = true;
+      keys.forEach(e => {
+         value = g.minimum_system_requirements[e] != null
+      })
+      return value;
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -73,7 +82,9 @@ export default {
   }
 
   .load-c {
-    height: 100vh;
+    position: absolute;
+    top: 47%;
+    left: 47%;
   }
 
   .btn-db {

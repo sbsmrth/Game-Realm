@@ -6,12 +6,12 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ModalLabel">Requeriments</h5>
+          <h5 class="modal-title" id="ModalLabel">Requirements</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p class="mb-3" v-for="rq in Object.keys(requeriments)" :key="rq">
-            <b>{{rq.toUpperCase()}}: </b>{{requeriments[rq]}}
+          <p class="mb-3" v-for="rq in Object.keys(requirements)" :key="rq">
+            <b>{{rq.toUpperCase()}}: </b>{{requirements[rq]}}
           </p>
         </div>
         <div class="modal-footer">
@@ -27,7 +27,7 @@ export default {
   name: 'ModalPL',
 
   props: {
-    requeriments: {
+    requirements: {
       type: Object,
       required: true,
     },
