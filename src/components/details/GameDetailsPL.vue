@@ -6,11 +6,11 @@
         <div class="col-12 cont-description d-flex justify-content-center 
         align-items-center rounded-3 mb-4">
           <div class="cont-info mb-3">
-                <h2 class="mt-3">Description</h2>
-                <p class="mt-3">{{game.description}}</p>
-                <ModalPL v-if="game.minimum_system_requirements && showRequirements(game)" 
-                :requirements="game.minimum_system_requirements"/>
-                <button v-else type="button" class="btn-db" disabled>See requirements</button>
+            <h2 class="mt-3">Description</h2>
+            <p class="mt-3">{{game.description}}</p>
+            <ModalPL v-if="game.minimum_system_requirements && showRequirements(game)" 
+            :requirements="game.minimum_system_requirements"/>
+            <button v-else type="button" class="btn-db" disabled>See requirements</button>
           </div>
         </div>
         <div class="col-4 cont-main d-flex justify-content-center 
@@ -18,7 +18,7 @@
         v-for="e of filterRequirements" :key="e" >
           <div class="cont-info">
             <h4 class="mt-3">
-                  <b>{{capitalize(e)}}</b>
+              <b>{{capitalize(e)}}</b>
             </h4>
             <p class="mt-2"><i>{{game[e]}}</i></p>
           </div>
