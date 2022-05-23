@@ -17,8 +17,8 @@
       </div>
       <div class="c2 mb-3 d-flex justify-content-center align-items-center">
         <div>
-          <h2 class="c2-c">Happiness</h2>
-          <p class="c2-c mt-3">
+          <h2 class="c2-c text-dark">Happiness</h2>
+          <p class="c2-c mt-3 text-dark">
             <q>
               <i>
                 I don’t need a weapon; my friends are my power!
