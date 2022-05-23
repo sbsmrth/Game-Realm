@@ -1,9 +1,9 @@
 <template>
-  <video class="mb-3" src="@/assets/ourworld/pexels-mart-production-8888792.mp4" muted autoplay loop>
+  <video class="mb-3" src="@/assets/ourworld/ourworld_bg.mp4" muted autoplay loop>
   </video>
   <div class="container-fluid d-flex justify-content-center">
     <div class="cont-info d-flex">
-      <div class="c1 d-flex justify-content-center align-items-center me-4">
+      <div class="c1 d-flex justify-content-center align-items-center me-4 bg-dark">
         <div>
           <h2 class="c1-c">Health</h2>
           <p class="c1-c mt-3">
@@ -33,8 +33,8 @@
     <div class="cont-info d-flex">
       <div class="c2 mb-3 d-flex justify-content-center align-items-center me-4">
         <div>
-          <h2 class="c2-c">Be whoever you want to be</h2>
-          <p class="c2-c mt-3 p-large">
+          <h2 class="c2-c text-dark">Be whoever you want to be</h2>
+          <p class="c2-c text-dark mt-3 p-large">
             <q>
               <i>
                 I happen to believe that video games will be the largest sport and entertainment in the world. The reason for that is a video game can be every sport. 
@@ -44,7 +44,7 @@
           </p>
         </div>
       </div>
-      <div class="c1 d-flex justify-content-center align-items-center">
+      <div class="c1 d-flex justify-content-center align-items-center bg-dark">
         <div>
           <h2 class="c1-c">Connect with yourself</h2>
           <p class="c1-c mt-3 p-large">
@@ -67,7 +67,6 @@ export default {
 </script>
 
 <style scoped>
-
   video {
     width: 100%;
   }
@@ -79,15 +78,10 @@ export default {
   .c1 {
     width: 50%;
     height: 400px;
-    background-color: #121314;
   }
 
   .c1-c {
     color: #ffff;
-  }
-
-  .c2-c {
-    color: #121314;
   }
 
   .c2 {
@@ -96,9 +90,7 @@ export default {
     background-color: #F8F9FA;
   }
 
-
   .p-large {
     width: 550px;
   }
-
 </style>

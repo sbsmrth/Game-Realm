@@ -32,7 +32,7 @@ export default defineComponent({
 
   methods: {
     async getGames(pt) {
-      if(pt != null) {
+      if(pt) {
         const rslt = await fetch(
           `https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${pt}`,
           {

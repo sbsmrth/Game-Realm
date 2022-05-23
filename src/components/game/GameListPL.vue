@@ -1,7 +1,7 @@
 <template>
   <div class="container my-3">
     <div class="row">
-      <div class="col-4 mb-3" v-for="game of games" :key="game">
+      <div class="col-md-6 col-lg-4 mb-3" v-for="game of games" :key="game">
         <game-card :title="game.title" :description="game.short_description" :source="
         game.thumbnail" :id="game.id"/>
       </div>
@@ -28,7 +28,3 @@ export default {
   },
 }
 </script>
-
-<style>
-
-</style>

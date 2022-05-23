@@ -20,13 +20,13 @@ export default defineComponent({
 
 <style scoped>
   .banner-image {
-    background-image: url('../assets/bg-home.jpg');
+    background-image: url('@/assets/home/bg-home.jpg');
     background-size: cover;
     height: 92vh;
   }
 
   button {
-  width: 150px;
+  width: 160px;
   height: 69px;
   font-size: 23px;
   cursor: pointer;
@@ -34,7 +34,6 @@ export default defineComponent({
   outline: none;
   background: transparent;
   color: white;
-  font-family: 'Times New Roman', Times, serif;
   font-weight: 700;
   position: relative;
   transition: all 0.5s;
@@ -60,5 +59,4 @@ export default defineComponent({
   button:hover {
   color: #141414;
   }
-
 </style>

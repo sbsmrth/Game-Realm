@@ -15,27 +15,31 @@ export default defineComponent({
 
 <style>
   .loading {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
+   width: 56px;
+   height: 56px;
+   display: grid;
+   animation: loading-plncf9 4s infinite;
   }
-  .loading:after {
-    content: " ";
-    display: block;
-    width: 66px;
-    height: 66px;
-    margin: 8px;
+
+  .loading::before,
+  .loading::after {
+    content: "";
+    grid-area: 1/1;
+    border: 9px solid;
     border-radius: 50%;
-    border: 6px solid #fcf;
-    border-color: #cbc9c8 transparent #cbc9c8 transparent;
-    animation: loading 1.2s linear infinite;
+    border-color: #1b1b1d #1b1b1d #0000 #0000;
+    mix-blend-mode: darken;
+    animation: loading-plncf9 1s infinite linear;
   }
-  @keyframes loading {
-    0% {
-      transform: rotate(0deg);
-    }
+
+  .loading::after {
+    border-color: #0000 #0000 #dbdcef #dbdcef;
+    animation-direction: reverse;
+  }
+
+  @keyframes loading-plncf9 {
     100% {
-      transform: rotate(360deg);
+        transform: rotate(1turn);
     }
   }
 </style>

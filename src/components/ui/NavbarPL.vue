@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light nav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <img src="@/assets/controller.svg" width="24" height="24" alt="">
+      <img src="@/assets/home/controller.svg" class="ms-2" width="25" height="25" alt="">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -76,8 +76,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
-  .nav {
+  .navbar {
     height: 8vh;
   }
 
@@ -110,7 +109,6 @@ export default defineComponent({
     text-decoration: none;
   }
 
-  
   form > div {
     display: flex;
     background:#fff;
@@ -125,7 +123,7 @@ export default defineComponent({
     background: transparent;
     font-weight: bold;
     padding-left: 27px;
-    background-image: url('../../assets/search.png');
+    background-image: url('../../assets/home/search.png');
     background-size: 14px;
     cursor: pointer;
     background-repeat: no-repeat;
@@ -136,5 +134,4 @@ export default defineComponent({
   form input:hover {
     cursor: text;
   }
-
 </style>

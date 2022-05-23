@@ -66,7 +66,7 @@ export default {
   }
 
   .btn-look:hover {
-    background-color: #141414;
+    background-color: #121314;
     color: #fff;
   }
 

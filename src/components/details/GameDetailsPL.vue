@@ -1,10 +1,10 @@
 <template>
-  <div v-if="(game.screenshots != null)">
+  <div v-if="(game.screenshots)">
     <CarouselPL :images="game.screenshots"/>
-    <div class="container-fluid d-flex justify-content-center mt-4" > 
+    <div class="container-fluid d-flex justify-content-center mt-3" > 
       <div class="row cont">
         <div class="col-12 cont-description d-flex justify-content-center 
-        align-items-center rounded-3 mb-4">
+        align-items-center rounded-3 mb-4 text-dark">
           <div class="cont-info mb-3">
             <h2 class="mt-3">Description</h2>
             <p class="mt-3">{{game.description}}</p>
@@ -13,9 +13,9 @@
             <button v-else type="button" class="btn-db" disabled>See requirements</button>
           </div>
         </div>
-        <div class="col-4 cont-main d-flex justify-content-center 
-        align-items-center mb-2 border border-white border-5"
-        v-for="e of filterRequirements" :key="e" >
+        <div class="col-12 col-md-6 col-lg-4 cont-main d-flex justify-content-center 
+        align-items-center mb-2 border border-white border-5 bg-dark"
+        v-for="e of requirements" :key="e" >
           <div class="cont-info">
             <h4 class="mt-3">
               <b>{{capitalize(e)}}</b>
@@ -44,18 +44,14 @@ export default {
     },
   },
 
+  data: () => ({
+    requirements : ['genre', 'platform', 'developer', 'publisher', 'release_date', 'status']
+  }),
+
   components: {
     CarouselPL,
     ModalPL,
     LoadingPL,
-  },
-
-  computed: {
-    filterRequirements() {
-      return Object.keys(this.game).filter(e => 
-      e === 'genre' || e ==='platform' || e === 'developer' 
-      || e === 'publisher' || e === 'release_date' || e === 'status' )
-    },
   },
 
   methods: {
@@ -64,11 +60,14 @@ export default {
     },
 
     showRequirements(g) {
-      const keys = Object.keys(g.minimum_system_requirements);
+      const keys = Object.keys(g.minimum_system_requirements)
       let value = true;
-      keys.forEach(e => {
-         value = g.minimum_system_requirements[e] != null
-      })
+      for(let e of keys) {
+        if(!(g.minimum_system_requirements[e])) {
+          value = false;
+          break;
+        }
+      }
       return value;
     },
   },
@@ -117,7 +116,6 @@ export default {
 
   .cont-description {
     background-color: #F8F9FA;
-    color: #121314;
   }
 
   .cont-info {
@@ -125,8 +123,6 @@ export default {
   }
 
   .cont-main {
-    background-color: #121314;
     color: #fff;
   }
-
 </style>

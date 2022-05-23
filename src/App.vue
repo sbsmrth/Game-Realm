@@ -16,7 +16,6 @@ export default defineComponent({
 </script>
 
 <style>
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,21 +29,12 @@ export default defineComponent({
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #0f0f0f;
-  border-radius: 12px;
+  background-color: #121314;
+  border-radius: 14px;
   height: 80px;
-}
-
-nav {
-  padding: 30px;
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
