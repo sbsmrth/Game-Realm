@@ -105,9 +105,6 @@ export default {
     text-decoration-thickness: auto;
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
   }
 
   .cont {

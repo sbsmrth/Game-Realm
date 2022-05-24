@@ -32,10 +32,16 @@ export default {
 
 <style scoped>
   .crl {
-    height: 92vh;
+    height: 30vh;
   }
 
   .carousel {
     width: 100%;
+  }
+
+  @media (min-width: 768px) { 
+    .crl {
+      height: 92vh;
+    }
   }
 </style>
