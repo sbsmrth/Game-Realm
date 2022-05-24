@@ -25,6 +25,18 @@ export default defineComponent({
     height: 92vh;
   }
 
+  @media (min-width: 992px) { 
+    .banner-image {
+      background-image: url('@/assets/home/bg-home-l.jpg');
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .banner-image {
+      background-image: url('@/assets/home/bg-home-xl.jpg');
+    }
+  }
+
   button {
   width: 160px;
   height: 69px;
