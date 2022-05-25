@@ -1,6 +1,6 @@
 <template>
   <LoadingPL v-if="load"/>
-  <GameListPL v-else :games="games"/>
+  <GameListPL v-else :games="filterGames"/>
 </template>
 
 <script>
@@ -26,6 +26,12 @@ export default defineComponent({
     this.getGames();
   },
 
+  computed: {
+    filterGames() {
+      return this.games.slice(0,183)
+    }
+  },
+
   methods: {
     async getGames() {
       try {
@@ -43,11 +49,10 @@ export default defineComponent({
         const data = await rslt.json();
         this.games = data;
         this.load = false;
-
+    
       } catch(error) {
         console.log(error)
       }
-      
     },
   },
 })
