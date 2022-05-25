@@ -1,11 +1,11 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light nav">
     <div class="container-fluid">
-      <img src="@/assets/home/controller.svg" class="ms-2" width="25" height="25" alt="">
+      <img src="@/assets/home/controller.svg" class="ms-2 me-5" width="25" height="25" alt="">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-lg-0">
           <li class="nav-item me-2">
               <router-link to="/">
@@ -13,10 +13,10 @@
               </router-link>
           </li>
           <li class="nav-item dropdown me-2">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" aria-expanded="false">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categories
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
               <li v-for="categorie of categories" :key="categorie">
                 <router-link :to="{name:'categories', params:{ct:categorie}}">
                   <a class="dropdown-item text-center">{{capitalizeCat(categorie)}}</a>
@@ -25,10 +25,10 @@
             </ul>
           </li>
           <li class="nav-item dropdown me-2">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" aria-expanded="false">
+            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Platforms
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
               <li>
                 <router-link :to="{name:'platform', params:{pt:'pc'}}">
                   <a class="dropdown-item text-center">Pc</a>
@@ -76,19 +76,29 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  .navbar {
-    height: 8vh;
-  }
-
+  
   .navbar .navbar-nav .nav-link:hover{
     color: rgb(28, 27, 26);
   }
 
+  .dropdown-menu {
+    border: none;
+  }
+
+  .dropdown-menu {
+    border: none;
+  }
+
   @media only screen and (min-width: 960px) {
+    .navbar {
+      height: 8vh;
+    }
+
     .dropdown:hover .dropdown-menu {
       display: block;
       margin-top: 0;
     }
+
     .dropdown .dropdown-menu {
       display: none;
     }
@@ -98,13 +108,21 @@ export default defineComponent({
     }
   }
 
-  @media screen and (max-width: 991px) {
+  @media screen and (max-width: 992px) {
     .dropdown-toggle.show::after {
       border-top: 0;
       border-bottom: 0.3em solid;
     }
   }
   
+  .navbar-toggler:focus,
+  .navbar-toggler:active,
+  .navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+
   a {
     text-decoration: none;
   }
@@ -119,15 +137,15 @@ export default defineComponent({
 
   form input {
     border: none;
-    height: 15px;
+    height: 1rem;
     background: transparent;
     font-weight: bold;
-    padding-left: 27px;
-    background-image: url('../../assets/home/search.png');
+    padding-left: 1.7rem;
+    background-image: url('@/assets/home/search.png');
     background-size: 14px;
     cursor: pointer;
     background-repeat: no-repeat;
-    width: 190px;
+    width: 12rem;
     outline: none; 
   }
   

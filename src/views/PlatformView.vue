@@ -1,7 +1,5 @@
 <template>
-  <div v-if="load" class="load-c">
-    <LoadingPL/>
-  </div>
+  <LoadingPL v-if="load"/>
   <GameListPL v-else :games="games"/> 
 </template>
 
@@ -58,11 +56,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped>
-  .load-c {
-    position: absolute;
-    top: 47%;
-    left: 47%;
-  }
-</style>

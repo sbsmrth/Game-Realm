@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-image w-100 d-flex justify-content-center align-items-center">
+  <div class="banner-image d-flex justify-content-center align-items-center">
     <div class="content text-center">
       <router-link :to="{name: 'games'}">
         <button>Ready for Adventure?</button>
@@ -22,46 +22,43 @@ export default defineComponent({
   .banner-image {
     background-image: url('@/assets/home/bg-home.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     height: 92vh;
   }
 
-  @media (min-width: 992px) { 
+  @media (min-width: 1200px) {
     .banner-image {
       background-image: url('@/assets/home/bg-home-l.jpg');
     }
   }
 
-  @media (min-width: 1200px) {
-    .banner-image {
-      background-image: url('@/assets/home/bg-home-xl.jpg');
-    }
-  }
-
   button {
-  width: 160px;
-  height: 69px;
-  font-size: 23px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: white;
-  font-weight: 700;
-  position: relative;
-  transition: all 0.5s;
-  z-index: 1;
+    width: 160px;
+    height: 69px;
+    font-size: 23px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-weight: 700;
+    position: relative;
+    transition: all 0.5s;
+    z-index: 1;
   }
 
   button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background-color: white;
-  z-index: -1;
-  transition: all 0.5s;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: all 0.5s;
   }
 
   button:hover::before {

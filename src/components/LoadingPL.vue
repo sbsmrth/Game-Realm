@@ -1,5 +1,7 @@
 <template>
-  <div class="loading">
+  <div class="container-fluid c-loading d-flex justify-content-center align-items-center">
+    <div class="loading">
+    </div>
   </div>
 </template>
 
@@ -14,6 +16,11 @@ export default defineComponent({
 </script>
 
 <style>
+  
+  .c-loading {
+    height: 84vh;
+  }
+
   .loading {
    width: 56px;
    height: 56px;

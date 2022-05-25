@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <LoadingPL class="load-c" v-else></LoadingPL>
+  <LoadingPL v-else></LoadingPL>
 </template>
 
 <script>
@@ -75,15 +75,8 @@ export default {
 </script>
 
 <style scoped>
-
   .contenedor {
     width: 96vw;
-  }
-
-  .load-c {
-    position: absolute;
-    top: 47%;
-    left: 47%;
   }
 
   .btn-db {
