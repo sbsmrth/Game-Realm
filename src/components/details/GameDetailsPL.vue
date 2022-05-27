@@ -15,8 +15,8 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4 cont-main d-flex justify-content-center 
         align-items-center mb-2 border border-white border-5 bg-dark"
-        v-for="e of requirements" :key="e" >
-          <div class="cont-info">
+        v-for="e of requirements" :key="e">
+          <div class="cont-info" data-test="item-rq">
             <h4 class="mt-3">
               <b>{{capitalize(e)}}</b>
             </h4>
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <LoadingPL v-else></LoadingPL>
+  <LoadingPL v-else id="loading"></LoadingPL>
 </template>
 
 <script>

@@ -11,7 +11,7 @@
         </div>
         <div class="modal-body">
           <p class="mb-3" v-for="rq in Object.keys(requirements)" :key="rq">
-            <b>{{rq.toUpperCase()}}: </b>{{requirements[rq]}}
+            <b data-test="modal-rq">{{rq.toUpperCase()}}: </b>{{requirements[rq]}}
           </p>
         </div>
         <div class="modal-footer">

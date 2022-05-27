@@ -2,8 +2,8 @@
   <div class="card">
   <img :src="source" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title fst-italic">{{title}}</h5>
-    <p class="card-text">{{description}}</p>
+    <h5 class="card-title fst-italic" data-test="card-title">{{title}}</h5>
+    <p class="card-text" data-test="card-description">{{description}}</p>
     <router-link :to="{name: 'details', params: {id, name:textLower}}">
       <button class="btn-look">See</button>
     </router-link>

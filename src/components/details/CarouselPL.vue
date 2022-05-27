@@ -2,7 +2,7 @@
   <div id="games" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner crl">
       <div v-for="(img, i) in images" :key="i" class="carousel-item" :class="{active:i===0}">
-        <img :src="img.image" class="d-block w-100" alt="">
+        <img data-test="image" :src="img.image" class="d-block w-100" alt="">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#games" data-bs-slide="prev">
