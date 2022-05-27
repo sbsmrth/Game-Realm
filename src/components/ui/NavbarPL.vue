@@ -1,18 +1,18 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light nav">
     <div class="container-fluid">
-      <img src="@/assets/home/controller.svg" class="ms-2 me-5" width="25" height="25" alt="">
+      <img src="@/assets/home/controller.svg" class="ms-4" width="25" height="25" alt="">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-lg-0">
-          <li class="nav-item me-2">
+        <ul class="navbar-nav mx-auto mb-lg-0">
+          <li class="nav-item">
               <router-link to="/">
                 <a class="nav-link active" aria-current="page">Home</a>
               </router-link>
           </li>
-          <li class="nav-item dropdown me-2">
+          <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categories
             </a>
@@ -24,7 +24,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item dropdown me-2">
+          <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Platforms
             </a>
@@ -41,13 +41,13 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item me-2">
+          <li class="nav-item">
             <router-link :to="{name:'ourworld'}">
               <a class="nav-link">Our World</a>
             </router-link>
           </li>
         </ul>
-        <form autocomplete="off">
+        <form autocomplete="off" class="all-form">
           <div>
             <input type="text" name="q" placeholder="Search">
           </div>
@@ -76,7 +76,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  
   .navbar .navbar-nav .nav-link:hover{
     color: rgb(28, 27, 26);
   }
@@ -102,10 +101,17 @@ export default defineComponent({
     .dropdown .dropdown-menu {
       display: none;
     }
+
     .dropdown:hover .dropdown-toggle::after {
       border-bottom: 0.3em solid;
       border-top: 0;
     }
+
+    .all-form {
+      position: absolute;
+      right: 0;
+      margin-right: 12px;
+    } 
   }
 
   @media screen and (max-width: 992px) {
