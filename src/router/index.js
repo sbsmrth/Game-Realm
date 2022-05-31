@@ -8,36 +8,42 @@ const routes = [
     component: HomeView,
   },
   {
-    path: '/platform/:pt',
-    name: 'platform',
-    component: () =>
-      import(/* webpackChunkName: "platform" */ '@/views/PlatformView.vue'),
-  },
-  {
-    path: '/categories/:ct',
-    name: 'categories',
-    component: () =>
-      import(/* webpackChunkName: "categories" */ '@/views/CategoriesView.vue'),
-  },
-  {
-    path: '/details/:id/:name',
-    name: 'details',
-    component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/GameDetailsView.vue'),
-  },
-  {
     path: '/games',
-    name: 'games',
+    children: [
+      {
+        path: '',
+        name: 'games',
+        component: () =>
+        import(/* webpackChunkName: "games" */ '@/views/GamesView.vue'),
+      },
+      {
+        path: 'platform/:pt',
+        name: 'platform',
+        component: () =>
+          import(/* webpackChunkName: "platform" */ '@/views/PlatformView.vue'),
+      },
+      {
+        path: 'categories/:ct',
+        name: 'categories',
+        component: () =>
+          import(/* webpackChunkName: "categories" */ '@/views/CategoriesView.vue'),
+      },
+      {
+        path: 'details/:id/:name',
+        name: 'details',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '@/views/GameDetailsView.vue'),
+      },
+      {
+        path: 'our-world/',
+        name: 'ourworld',
+        component: () =>
+          import(/* webpackChunkName: "ourworld" */ '@/views/OurWorldView.vue'),
+      },
+    ],
     component: () =>
-      import(/* webpackChunkName: "games" */ '@/views/GamesView.vue'),
+      import(/* webpackChunkName: "games" */ '@/views/BaseComponent.vue'),
   },
-  {
-    path: '/our-world/',
-    name: 'ourworld',
-    component: () =>
-      import(/* webpackChunkName: "ourworld" */ '@/views/OurWorldView.vue'),
-  },
- 
 ];
 
 const router = createRouter({
