@@ -1,5 +1,4 @@
 <template>
-  <router-view></router-view>
   <LoadingPL v-if="load" />
   <GameListPL v-else :games="filterGames" />
 </template>
