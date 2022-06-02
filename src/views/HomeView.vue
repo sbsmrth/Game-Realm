@@ -22,10 +22,9 @@ export default defineComponent({
   .banner-image {
     background-image: url('@/assets/home/bg-home.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background-position-y: 65%;
     height: 92vh;
+    background-position-x: 11%;
   }
 
   @media (min-width: 1200px) {
