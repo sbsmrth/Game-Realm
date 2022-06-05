@@ -25,7 +25,7 @@ export default defineComponent({
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: .6vw;
 }
 
 ::-webkit-scrollbar-thumb {
